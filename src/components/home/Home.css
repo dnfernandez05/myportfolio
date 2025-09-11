@@ -1,0 +1,113 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem; /* para may breathing space sa maliit na screen */
+}
+
+.intro {
+  max-width: 540px;
+  width: 100%; /* para mag-adjust sa maliit na screen */
+  text-align: center;
+}
+
+.home__img {
+  margin-bottom: 1.5rem;
+  max-width: 180px; /* para hindi sobrang laki sa maliit na screen */
+  width: 100%;
+}
+
+.home__name {
+  font-size: clamp(1.75rem, 2vw + 1rem, var(--h1-font-size));
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.home__socials {
+  display: flex;
+  justify-content: center;
+  font-size: 1.75rem;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap; /* para hindi mag-overflow sa sobrang liit */
+}
+
+.home__social-link {
+  font-size: 1.8rem;
+  color: var(--title-color);
+  transition: color 0.3s ease;
+}
+
+.home__social-link:hover {
+  color: hsl(313, 55%, 52%);
+}
+
+.scroll__down {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.home__scroll-name {
+  font-size: var(--small-font-size);
+}
+
+.mouse {
+  border: 2px solid #a6a1e5;
+  display: block;
+  height: 1.6rem;
+  width: 1.25rem;
+  margin: auto;
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+@keyframes ani-mouse {
+  0% {
+    top: 29%;
+  }
+  15% {
+    top: 50%;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 29%;
+  }
+}
+
+.wheel {
+  background-color: var(--title-color);
+  border-radius: 100%;
+  width: 0.25rem;
+  height: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: ani-mouse 2s linear infinite;
+}
+
+/* ✅ FIXED media query */
+@media screen and (max-width: 1024px) {
+  .home__social-link {
+    font-size: 1.25rem;
+  }
+
+  .home__img {
+    max-width: 150px; /* mas maliit sa tablet/phone */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__name {
+    font-size: 1.5rem; /* mas maliit sa phone */
+  }
+}

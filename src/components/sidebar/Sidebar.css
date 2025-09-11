@@ -1,0 +1,82 @@
+.aside {
+  position: fixed;
+  top: 0;
+  left: -110px; /* 🔹 hidden by default */
+  background: var(--body-color);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2.5rem 1rem;
+  width: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  transition: left 0.3s ease; /* smooth slide */
+}
+
+/* 🔹 when menu is open */
+.aside.show-menu {
+  left: 0 !important;
+}
+
+/* nav list */
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  align-items: center;
+}
+
+.nav__link {
+  font-size: 2rem;
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.nav__link:hover {
+  color: hsl(313, 55%, 52%);
+  transform: scale(1.25);
+}
+
+.copyright {
+  color: hsl(245, 15%, 65%);
+  font-size: var(--normal-font-size);
+  transform: rotate(-180deg);
+  text-align: center;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+}
+
+/* toggle button */
+.nav__toggle {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  cursor: pointer;
+  height: 40px;
+  width: 45px;
+  background-color: var(--body-color);
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* ensure always above sidebar */
+  transition: left 0.3s ease;
+}
+
+/* 🔹 move toggle button when sidebar is open */
+.nav__toggle-open {
+  left: 140px;
+}
+
+/* ✅ responsive */
+@media screen and (min-width: 1025px) {
+  .aside {
+    left: 0; /* show by default on desktop */
+  }
+  .nav__toggle {
+    display: none; /* hide toggle on large screens */
+  }
+}
