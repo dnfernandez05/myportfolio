@@ -1,28 +1,44 @@
 .work__filters {
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 1.875rem;
   margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
 }
 
 .work__item {
   cursor: pointer;
   font-weight: var(--font-bold);
   transition: 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  position: relative;
 }
+
 .work__item:hover {
   color: var(--first-color);
+  background-color: rgba(255, 105, 135, 0.1);
 }
 
 .work__container {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.875rem;
 }
+
 .work__card {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  aspect-ratio: 1.2;
+}
+
+.work__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work__mask {
@@ -34,7 +50,12 @@
   width: 100%;
   transition: 0.3s;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .work__card:hover .work__mask {
   opacity: 0.9;
 }
@@ -60,17 +81,21 @@
   margin: 0 0 0.98rem;
   padding: 0 1.25rem;
   position: absolute;
-  top: 3.75rem;
-  transform: translateY(30px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(30px);
   transition: 0.3s;
   opacity: 0;
+  text-align: center;
+  width: 90%;
 }
 
 .work__button {
   color: white;
   position: absolute;
   bottom: 1.5rem;
-  left: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: var(--h3-font-size);
   display: block;
   background-color: rgb(54, 24, 38);
@@ -83,30 +108,151 @@
   transition: 0.3s;
   opacity: 0;
 }
+
 .work__card:hover .work__button {
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
-.work__card:hover .work__title,
+
+.work__card:hover .work__title {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+}
+
 .work__card:hover .work__category {
   opacity: 1;
   transform: translateY(0);
 }
 
-@media screen and(max-width: 1024px) {
-  .work__filters {
-    justify-content: center;
-  }
+/* Large screens (desktops) */
+@media screen and (max-width: 1200px) {
   .work__container {
-    grid-template-columns: repeat(2, 330px);
-    justify-content: center;
-    row-gap: 1.875rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .work__filters {
+    column-gap: 1.5rem;
   }
 }
-@media screen and(max-width: 1024px) {
+
+/* Medium screens (laptops) */
+@media screen and (max-width: 992px) {
   .work__container {
-    grid-template-columns: 310px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
+  
   .work__filters {
-    row-gap: 0.25rem;
+    justify-content: center;
+    column-gap: 1.25rem;
+  }
+}
+
+/* Small screens (tablets) */
+@media screen and (max-width: 768px) {
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .work__filters {
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .work__item {
+    font-size: var(--small-font-size);
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .work__title {
+    font-size: var(--normal-font-size);
+  }
+  
+  .work__button {
+    height: 35px;
+    width: 35px;
+    font-size: var(--normal-font-size);
+    line-height: 37px;
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 576px) {
+  .work__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .work__filters {
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .work__item {
+    font-size: var(--smaller-font-size);
+    padding: 0.35rem 0.7rem;
+  }
+  
+  .work__card {
+    aspect-ratio: 1.1;
+  }
+  
+  .work__category {
+    font-size: var(--smaller-font-size);
+    padding: 0.15rem 0.5rem;
+    left: 1rem;
+  }
+  
+  .work__title {
+    font-size: var(--small-font-size);
+    padding: 0 1rem;
+  }
+  
+  .work__button {
+    height: 32px;
+    width: 32px;
+    font-size: var(--small-font-size);
+    line-height: 34px;
+    bottom: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 350px) {
+  .work__container {
+    max-width: 280px;
+    gap: 0.75rem;
+  }
+  
+  .work__filters {
+    column-gap: 0.5rem;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  
+  .work__item {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .work__card {
+    aspect-ratio: 1;
+  }
+  
+  .work__title {
+    font-size: 0.8rem;
+  }
+  
+  .work__button {
+    height: 28px;
+    width: 28px;
+    font-size: 0.8rem;
+    line-height: 30px;
   }
 }

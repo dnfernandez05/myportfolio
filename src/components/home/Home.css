@@ -4,25 +4,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem; /* para may breathing space sa maliit na screen */
+  padding: 2rem 1rem;
 }
 
 .intro {
   max-width: 540px;
-  width: 100%; /* para mag-adjust sa maliit na screen */
+  width: 100%;
   text-align: center;
 }
 
 .home__img {
   margin-bottom: 1.5rem;
-  max-width: 180px; /* para hindi sobrang laki sa maliit na screen */
+  max-width: 180px;
   width: 100%;
+  height: auto;
 }
 
 .home__name {
-  font-size: clamp(1.75rem, 2vw + 1rem, var(--h1-font-size));
+  font-size: clamp(1.75rem, 4vw, var(--h1-font-size));
   font-weight: var(--font-bold);
   margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.home__education {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .home__socials {
@@ -31,17 +39,24 @@
   font-size: 1.75rem;
   gap: 1rem;
   margin: 1.5rem 0;
-  flex-wrap: wrap; /* para hindi mag-overflow sa sobrang liit */
+  flex-wrap: wrap;
 }
 
 .home__social-link {
   font-size: 1.8rem;
   color: var(--title-color);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .home__social-link:hover {
   color: hsl(313, 55%, 52%);
+  transform: translateY(-3px);
+}
+
+.btn {
+  margin: 1.5rem 0;
+  padding: 0.875rem 2rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .scroll__down {
@@ -95,19 +110,111 @@
   animation: ani-mouse 2s linear infinite;
 }
 
-/* ✅ FIXED media query */
-@media screen and (max-width: 1024px) {
-  .home__social-link {
-    font-size: 1.25rem;
-  }
-
+/* Large screens (desktops) */
+@media screen and (max-width: 1200px) {
   .home__img {
-    max-width: 150px; /* mas maliit sa tablet/phone */
+    max-width: 160px;
+  }
+  
+  .home__social-link {
+    font-size: 1.6rem;
   }
 }
 
+/* Medium screens (tablets) */
+@media screen and (max-width: 992px) {
+  .home {
+    padding: 1.5rem 1rem;
+  }
+  
+  .home__img {
+    max-width: 140px;
+  }
+  
+  .home__social-link {
+    font-size: 1.5rem;
+  }
+  
+  .scroll__down {
+    bottom: 2rem;
+  }
+}
+
+/* Small screens (tablets) */
 @media screen and (max-width: 768px) {
-  .home__name {
-    font-size: 1.5rem; /* mas maliit sa phone */
+  .home {
+    padding: 1rem;
+  }
+  
+  .home__img {
+    max-width: 120px;
+  }
+  
+  .home__social-link {
+    font-size: 1.4rem;
+  }
+  
+  .home__socials {
+    gap: 0.8rem;
+    margin: 1.25rem 0;
+  }
+  
+  .scroll__down {
+    bottom: 1.5rem;
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 576px) {
+  .home {
+    padding: 0.75rem;
+    min-height: 90vh;
+  }
+  
+  .home__img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .home__social-link {
+    font-size: 1.3rem;
+  }
+  
+  .home__socials {
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 350px) {
+  .home {
+    padding: 0.5rem;
+  }
+  
+  .home__img {
+    max-width: 80px;
+  }
+  
+  .home__social-link {
+    font-size: 1.2rem;
+  }
+  
+  .home__socials {
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.825rem;
+  }
+  
+  .scroll__down {
+    bottom: 1rem;
   }
 }

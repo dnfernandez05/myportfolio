@@ -1,8 +1,37 @@
 .main {
   margin-left: 110px;
+  padding: 0 1rem;
+  transition: margin-left 0.3s ease;
 }
-@media screen and(max-width: 1024px) {
+
+/* Large screens (desktops) */
+@media screen and (max-width: 1024px) {
   .main {
     margin-left: 0;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 576px) {
+  .main {
+    margin-left: 0;
+    padding: 0 0.75rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 350px) {
+  .main {
+    margin-left: 0;
+    padding: 0 0.5rem;
   }
 }

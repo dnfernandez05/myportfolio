@@ -1,7 +1,7 @@
 .aside {
   position: fixed;
   top: 0;
-  left: -110px; /* 🔹 hidden by default */
+  left: -110px;
   background: var(--body-color);
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   padding: 2.5rem 1rem;
@@ -11,15 +11,18 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  transition: left 0.3s ease; /* smooth slide */
+  transition: left 0.3s ease;
 }
 
-/* 🔹 when menu is open */
 .aside.show-menu {
   left: 0 !important;
 }
 
-/* nav list */
+.nav__logo img {
+  width: 50px;
+  height: auto;
+}
+
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -33,23 +36,28 @@
   font-weight: var(--font-bold);
   transition: color 0.3s ease, transform 0.2s ease;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .nav__link:hover {
   color: hsl(313, 55%, 52%);
   transform: scale(1.25);
+  background-color: rgba(255, 105, 135, 0.1);
 }
 
 .copyright {
   color: hsl(245, 15%, 65%);
-  font-size: var(--normal-font-size);
+  font-size: var(--small-font-size);
   transform: rotate(-180deg);
   text-align: center;
   letter-spacing: 2px;
   writing-mode: vertical-rl;
 }
 
-/* toggle button */
 .nav__toggle {
   position: fixed;
   top: 1.25rem;
@@ -62,21 +70,178 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* ensure always above sidebar */
+  z-index: 9999;
   transition: left 0.3s ease;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* 🔹 move toggle button when sidebar is open */
+.nav__toggle:hover {
+  background-color: rgba(255, 105, 135, 0.1);
+}
+
+.nav__toggle i {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
 .nav__toggle-open {
   left: 140px;
 }
 
-/* ✅ responsive */
+/* Large screens (desktops) */
 @media screen and (min-width: 1025px) {
   .aside {
-    left: 0; /* show by default on desktop */
+    left: 0;
   }
   .nav__toggle {
-    display: none; /* hide toggle on large screens */
+    display: none;
+  }
+}
+
+/* Medium screens (laptops) */
+@media screen and (max-width: 992px) {
+  .aside {
+    width: 90px;
+    padding: 2rem 0.75rem;
+    left: -100px;
+  }
+  
+  .aside.show-menu {
+    left: 0;
+  }
+  
+  .nav__toggle-open {
+    left: 120px;
+  }
+  
+  .nav__logo img {
+    width: 45px;
+  }
+  
+  .nav__link {
+    font-size: 1.75rem;
+    padding: 0.4rem;
+  }
+  
+  .copyright {
+    font-size: var(--smaller-font-size);
+  }
+}
+
+/* Small screens (tablets) */
+@media screen and (max-width: 768px) {
+  .aside {
+    width: 80px;
+    padding: 1.5rem 0.5rem;
+    left: -90px;
+  }
+  
+  .nav__toggle {
+    top: 1rem;
+    left: 1rem;
+    height: 35px;
+    width: 40px;
+  }
+  
+  .nav__toggle-open {
+    left: 100px;
+  }
+  
+  .nav__logo img {
+    width: 40px;
+  }
+  
+  .nav__link {
+    font-size: 1.5rem;
+    padding: 0.35rem;
+  }
+  
+  .nav__list {
+    row-gap: 1.25rem;
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 576px) {
+  .aside {
+    width: 70px;
+    padding: 1.25rem 0.4rem;
+    left: -80px;
+  }
+  
+  .nav__toggle {
+    top: 0.75rem;
+    left: 0.75rem;
+    height: 32px;
+    width: 36px;
+  }
+  
+  .nav__toggle i {
+    font-size: 1.1rem;
+  }
+  
+  .nav__toggle-open {
+    left: 85px;
+  }
+  
+  .nav__logo img {
+    width: 35px;
+  }
+  
+  .nav__link {
+    font-size: 1.3rem;
+    padding: 0.3rem;
+  }
+  
+  .nav__list {
+    row-gap: 1rem;
+  }
+  
+  .copyright {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 350px) {
+  .aside {
+    width: 60px;
+    padding: 1rem 0.3rem;
+    left: -70px;
+  }
+  
+  .nav__toggle {
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 28px;
+    width: 32px;
+  }
+  
+  .nav__toggle i {
+    font-size: 1rem;
+  }
+  
+  .nav__toggle-open {
+    left: 75px;
+  }
+  
+  .nav__logo img {
+    width: 30px;
+  }
+  
+  .nav__link {
+    font-size: 1.1rem;
+    padding: 0.25rem;
+  }
+  
+  .nav__list {
+    row-gap: 0.8rem;
+  }
+  
+  .copyright {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
   }
 }
