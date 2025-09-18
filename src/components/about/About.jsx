@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import Image from "../../asset/avatar-2.svg";
+import Image from "../../asset/aqna.jpg";
 import AboutBox from "./AboutBox";
 
 const About = () => {
@@ -21,38 +21,55 @@ const About = () => {
               Download CV
             </a>
           </div>
-          <div className="about__skills grid">
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Development</h3>
-                <span className="skills__number">60%</span>
-              </div>
+        </div>
+      </div>
 
-              <div className="skills__bar">
-                <span className="skills__percentage development"></span>
-              </div>
+      {/* Separate Skills Section */}
+      <div className="about__skills-section">
+        <h3 className="skills__section-title">Technical Skills</h3>
+        
+        <div className="skills__container">
+          <div className="skill__card">
+            <div className="skill__icon">
+              <i className="icon-code"></i>
             </div>
-
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">UI/UX Design</h3>
-                <span className="skills__number">80%</span>
-              </div>
-
-              <div className="skills__bar">
-                <span className="skills__percentage ui__design"></span>
-              </div>
+            <div className="skill__content">
+              <h4 className="skill__title">Frontend Development</h4>
+              <p className="skill__description">React, JavaScript, HTML5, CSS3</p>
+              <div className="skill__level advanced">Advanced</div>
             </div>
+          </div>
 
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Database</h3>
-                <span className="skills__number">60%</span>
-              </div>
+          <div className="skill__card">
+            <div className="skill__icon">
+              <i className="icon-magic-wand"></i>
+            </div>
+            <div className="skill__content">
+              <h4 className="skill__title">UI/UX Design</h4>
+              <p className="skill__description">Figma, Adobe XD, Responsive Design</p>
+              <div className="skill__level expert">Advanced</div>
+            </div>
+          </div>
 
-              <div className="skills__bar">
-                <span className="skills__percentage database"></span>
-              </div>
+          <div className="skill__card">
+            <div className="skill__icon">
+              <i className="icon-organization"></i>
+            </div>
+            <div className="skill__content">
+              <h4 className="skill__title">Database & Backend</h4>
+              <p className="skill__description">MySQL, MongoDB, Node.js</p>
+              <div className="skill__level intermediate">Intermediate</div>
+            </div>
+          </div>
+
+          <div className="skill__card">
+            <div className="skill__icon">
+              <i className="icon-rocket"></i>
+            </div>
+            <div className="skill__content">
+              <h4 className="skill__title">Tools & Workflow</h4>
+              <p className="skill__description">Git, VS Code, Webpack, NPM</p>
+              <div className="skill__level advanced">Advanced</div>
             </div>
           </div>
         </div>
