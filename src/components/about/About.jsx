@@ -31,11 +31,11 @@ const About = () => {
         <div className="skills__container">
           <div className="skill__card">
             <div className="skill__icon">
-              <i className="icon-code"></i>
+              <i className="icon-star"></i>
             </div>
             <div className="skill__content">
               <h4 className="skill__title">Frontend Development</h4>
-              <p className="skill__description">React, JavaScript, HTML5, CSS3</p>
+              <p className="skill__description">React, JavaScript, HTML5,PHP </p>
               <div className="skill__level advanced">Advanced</div>
             </div>
           </div>
@@ -46,7 +46,7 @@ const About = () => {
             </div>
             <div className="skill__content">
               <h4 className="skill__title">UI/UX Design</h4>
-              <p className="skill__description">Figma, Adobe XD, Responsive Design</p>
+              <p className="skill__description">Figma, Responsive Design</p>
               <div className="skill__level expert">Advanced</div>
             </div>
           </div>
@@ -57,7 +57,7 @@ const About = () => {
             </div>
             <div className="skill__content">
               <h4 className="skill__title">Database & Backend</h4>
-              <p className="skill__description">MySQL, MongoDB, Node.js</p>
+              <p className="skill__description">MySQL, Node.js</p>
               <div className="skill__level intermediate">Intermediate</div>
             </div>
           </div>
