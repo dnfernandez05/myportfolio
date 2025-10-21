@@ -11,12 +11,15 @@
   max-width: 540px;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home__img-wrapper {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .home__img {
@@ -29,6 +32,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 2;
+  display: block;
 }
 
 .img-border-effect {
@@ -61,12 +65,14 @@
   font-weight: var(--font-bold);
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  width: 100%;
 }
 
 .home__education {
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin-bottom: 1.5rem;
   display: block;
+  width: 100%;
 }
 
 .home__socials {
@@ -76,6 +82,7 @@
   gap: 1rem;
   margin: 1.5rem 0;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .home__social-link {
@@ -100,14 +107,13 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(255, 105, 135, 0.3);
+  display: inline-block;
 }
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 105, 135, 0.4);
 }
-
-/* Remove all .scroll__down, .mouse__wrapper, .mouse, and .wheel related styles */
 
 /* Large screens (desktops) */
 @media screen and (max-width: 1200px) {
@@ -128,18 +134,22 @@
     padding: 1.5rem 1rem;
   }
   
+  .intro {
+    max-width: 480px;
+  }
+  
   .home__img {
     max-width: 260px;
     width: 260px;
     height: 260px;
   }
   
-  .home__social-link {
-    font-size: 1.5rem;
+  .home__img-wrapper {
+    margin-bottom: 1.75rem;
   }
   
-  .scroll__down {
-    bottom: 2rem;
+  .home__social-link {
+    font-size: 1.5rem;
   }
 }
 
@@ -149,10 +159,18 @@
     padding: 1rem;
   }
   
+  .intro {
+    max-width: 420px;
+  }
+  
   .home__img {
     max-width: 220px;
     width: 220px;
     height: 220px;
+  }
+  
+  .home__img-wrapper {
+    margin-bottom: 1.5rem;
   }
   
   .home__social-link {
@@ -163,10 +181,6 @@
     gap: 0.8rem;
     margin: 1.25rem 0;
   }
-  
-  .scroll__down {
-    bottom: 1.5rem;
-  }
 }
 
 /* Small screens (phones) */
@@ -176,11 +190,18 @@
     min-height: 90vh;
   }
   
+  .intro {
+    max-width: 100%;
+  }
+  
   .home__img {
     max-width: 180px;
     width: 180px;
     height: 180px;
-    margin-bottom: 1rem;
+  }
+  
+  .home__img-wrapper {
+    margin-bottom: 1.25rem;
   }
   
   .home__social-link {
@@ -210,6 +231,10 @@
     height: 150px;
   }
   
+  .home__img-wrapper {
+    margin-bottom: 1rem;
+  }
+  
   .home__social-link {
     font-size: 1.2rem;
   }
@@ -221,9 +246,5 @@
   .btn {
     padding: 0.65rem 1.25rem;
     font-size: 0.825rem;
-  }
-  
-  .scroll__down {
-    bottom: 1rem;
   }
 }
