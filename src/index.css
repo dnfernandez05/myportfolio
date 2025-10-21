@@ -179,18 +179,16 @@ img {
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
-  line-height: 1;
-  border-radius: 1.875rem;
-  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--first-color), hsl(313, 55%, 52%));
   color: #fff;
-  display: inline-block;
-  background-color: var(--first-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: var(--font-bold);
-  text-decoration: none;
+  display: inline-block;
   transition: all 0.3s ease;
+  border: none;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 105, 135, 0.4);
 }
 
 @keyframes button-push {
@@ -203,10 +201,8 @@ img {
 }
 
 .btn:hover {
-  animation: button-push 0.3s linear 1;
-  background-color: hsl(353, 100%, 55%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 105, 135, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 105, 135, 0.5);
 }
 
 /* Container responsive styles */
