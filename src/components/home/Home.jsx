@@ -12,7 +12,7 @@ const Home = () => {
           <div className="img-border-effect"></div>
         </div>
         <h1 className="home__name"> Daphne Fernandez</h1>
-        <span className="home__education">Aspiring Front-End Developer / Graphic Designer</span>
+        <span className="home__education">Front-End Developer / Graphic Designer</span>
 
         <HeaderSocials />
 

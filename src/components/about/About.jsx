@@ -17,8 +17,9 @@ const About = () => {
         <div className="about__data grid">
           <div className="about__info">
             <p className="about__description">
-              Aspiring junior front-end developer excited to apply my skills,
-              passion, and creativity in a real-world team setting.
+             I’m a recent Computer Engineering graduate from De La Salle University–Dasmariñas. 
+             I have a solid background in software development and enjoy solving technical problems. 
+             I’ve worked on both front-end and back-end projects using technologies like React.js, Node.js, PHP, and Python.
             </p>
             <a href="/resume.pdf" className="btn">
               Download CV
